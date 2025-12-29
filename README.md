@@ -1,11 +1,13 @@
 # EFP Extension for Scaffold-ETH 2
 
+![EFP Extension Preview](readme-img.png)
+
 Add **Ethereum Follow Protocol (EFP)** social graph functionality to your Scaffold-ETH 2 project. EFP is the onchain social graph protocol for Ethereum accounts - like Twitter follows, but fully decentralized and portable across any dApp.
 
 ## Installation
 
 ```bash
-npx create-eth@latest -e ethereumfollowprotocol/scaffold-efp-ext
+npx create-eth@latest -e ethereumidentitykit/scaffold-efp-ext
 ```
 
 Or add to an existing SE-2 project:
@@ -143,4 +145,3 @@ For full control, you can self-host the EFP infrastructure stack:
 ---
 
 Built with ❤️ by the [EFP team](https://github.com/ethereumfollowprotocol)
-
