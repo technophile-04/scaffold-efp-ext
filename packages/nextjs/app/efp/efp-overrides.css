@@ -1,0 +1,131 @@
+/* EFP Extension - EIK Component Overrides */
+
+/* Ensure Notifications dropdown appears above other components */
+.notifications-container,
+.notifications-dropdown,
+.notifications-dropdown-content {
+  z-index: 9999 !important;
+}
+
+/* Add rounded corners to Notifications dropdown */
+.notifications-dropdown,
+.notifications-dropdown-content {
+  border-radius: var(--rounded-box, 1rem) !important;
+  overflow: visible;
+}
+
+/* Fix ProfileCard name alignment - EIK centers by default */
+.profile-card .profile-name {
+  text-align: left;
+}
+
+/* Add rounded corners and shadow to ProfileCard to match card styling */
+.profile-card {
+  border-radius: var(--rounded-box, 1rem) !important;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Fix FullWidthProfile header background visibility */
+.user-profile-header-container,
+.user-profile-header-container-ultra-wide {
+  z-index: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.user-profile-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add rounded corners and shadow to FullWidthProfile to match card styling */
+.user-profile-container {
+  border-radius: var(--rounded-box, 1rem);
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.user-profile-header-container,
+.user-profile-header-container-ultra-wide {
+  border-radius: var(--rounded-box, 1rem);
+}
+
+/* Fix DaisyUI conflict - EIK uses "loading" class which triggers DaisyUI spinner */
+.followers-following-container.loading,
+.followers-following-container.loading * {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  animation: none !important;
+  aspect-ratio: unset !important;
+  pointer-events: auto !important;
+}
+
+.followers-following-container.loading {
+  width: 100% !important;
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+.followers-following-container.loading::before,
+.followers-following-container.loading::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Add rounded corners and shadow to FollowersAndFollowing table */
+.followers-following-container {
+  border-radius: var(--rounded-box, 1rem) !important;
+  overflow: visible;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Remove internal white glow from EIK components */
+.followers-following-container *,
+.profile-list-container,
+.profile-list-container * {
+  box-shadow: none !important;
+}
+
+
+/* Hide default fallback header in FullWidthProfile only */
+.user-profile-header-container img[src*="default-header.svg"],
+.user-profile-header-container-ultra-wide img[src*="default-header.svg"] {
+  opacity: 0 !important;
+}
+
+/* Only apply solid background when default header image is present - Light mode (FullWidthProfile only) */
+.user-profile-header-container:has(img[src*="default-header.svg"]),
+.user-profile-header-container-ultra-wide:has(img[src*="default-header.svg"]) {
+  background: #ffffff !important;
+}
+
+/* Dark mode solid background (FullWidthProfile only) */
+[data-theme="dark"] .user-profile-header-container:has(img[src*="default-header.svg"]),
+[data-theme="dark"] .user-profile-header-container-ultra-wide:has(img[src*="default-header.svg"]) {
+  background: var(--color-base-100) !important;
+}
+
+/* Add shadow to Notifications dropdown */
+.notifications-dropdown,
+.notifications-dropdown-content {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Disable click on followers-you-know section to prevent modal z-index issues */
+.user-profile-common-followers-container,
+.user-profile-desktop-common-followers-container {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Force FollowersYouKnow text to wrap after the names */
+.common-followers-container {
+  max-width: 310px;
+}
+

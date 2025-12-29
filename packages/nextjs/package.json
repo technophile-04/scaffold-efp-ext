@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ethereum-identity-kit": "^0.2.65"
+  }
+}
+
